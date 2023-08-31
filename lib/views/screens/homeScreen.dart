@@ -38,7 +38,8 @@ class _homeScreenState extends State<homeScreen> {
           SizedBox(
             height: 100,
           ),
-          mainEventWidget("Test", "TEst", "test:test")
+          mainEventWidget("Journey to space 5", "Mon 17/5", "5:34:16",
+              "assets/images/spaceman.jpg", context)
         ],
       ),
     );
