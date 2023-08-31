@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/views/widgets/mainEventWidget.dart';
+import '../widgets/mainEventWidget.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
