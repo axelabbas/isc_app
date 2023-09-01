@@ -8,7 +8,7 @@ topicWidget(image, title) {
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-              spreadRadius: 0,
+              spreadRadius: 2,
               blurRadius: 4,
               offset: Offset(0, 4),
               color: Colors.black.withOpacity(0.25))

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 topicGridWidget(List<Widget> children) {
-  return GridView.count(
-    shrinkWrap: true,
-    crossAxisSpacing: 45,
-    mainAxisSpacing: 30,
-    crossAxisCount: 2,
-    childAspectRatio: (3 / 3.5),
-    children: children,
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    child: GridView.count(
+      shrinkWrap: true,
+      crossAxisSpacing: 50,
+      mainAxisSpacing: 30,
+      crossAxisCount: 2,
+      childAspectRatio: (110 / 130),
+      children: children,
+    ),
   );
 }
