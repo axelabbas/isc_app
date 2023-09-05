@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/profileWidgets/statsCardWidget.dart';
 import 'package:iscapp/views/widgets/profileWidgets/statsTileWidget.dart';

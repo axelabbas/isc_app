@@ -3,7 +3,6 @@ import "package:iscapp/models/colorsClass.dart";
 
 Widget mainEventWidget(mainText, subText, time, imgPath, context) {
   final currentWidth = MediaQuery.of(context).size.width;
-  final currentHeight = MediaQuery.of(context).size.height;
   return Stack(
     alignment: Alignment.topCenter,
     clipBehavior: Clip.none,

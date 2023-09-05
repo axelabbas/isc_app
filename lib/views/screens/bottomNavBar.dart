@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/views/screens/coursesScreen.dart';
 import 'package:iscapp/views/screens/homeScreen.dart';
 import 'package:iscapp/views/screens/profileScreen.dart';
 
@@ -15,7 +16,7 @@ class _bottomNavState extends State<bottomNav> {
   List<Widget> _pages = [
     homeScreen(),
     profileScreen(),
-    // exploreScreen(),
+    coursesScreen(),
     // profileScreen(),
   ];
   PageController _pageController = PageController(initialPage: 0);
