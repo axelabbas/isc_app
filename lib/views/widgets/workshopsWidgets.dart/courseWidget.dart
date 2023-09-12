@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iscapp/views/screens/coursesScreen.dart';
 
 courseWidget(context, title, lessonCount, startDay, endDay, time) {
-  double imgSize = MediaQuery.of(context).size.width * 0.26;
-
   return Container(
-    height: MediaQuery.of(context).size.width * 0.25,
+    height: MediaQuery.of(context).size.width * 0.17,
     margin: EdgeInsets.symmetric(vertical: 10),
     decoration: BoxDecoration(
       color: Colors.white,
@@ -37,7 +35,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                       fontSize:
-                          AdaptiveTextSize().getadaptiveTextSize(context, 30),
+                          AdaptiveTextSize().getadaptiveTextSize(context, 25),
                       fontWeight: FontWeight.bold)),
               Text(
                 overflow: TextOverflow.ellipsis,
@@ -45,7 +43,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize:
-                        AdaptiveTextSize().getadaptiveTextSize(context, 25)),
+                        AdaptiveTextSize().getadaptiveTextSize(context, 22)),
               ),
               Row(
                 children: [
@@ -76,8 +74,10 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
         ),
         Container(
           margin: EdgeInsets.only(right: 2, top: 2, bottom: 2),
-          height: imgSize, //> 100 ? 100 : imgSize,
-          width: imgSize, //> 100 ? 100 : imgSize,
+          height:
+              MediaQuery.of(context).size.width * 0.17, //> 100 ? 100 : imgSize,
+          width:
+              MediaQuery.of(context).size.width * 0.17, //> 100 ? 100 : imgSize,
           decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/spaceman.jpg"),

@@ -3,6 +3,7 @@ import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/coursesScreen.dart';
 import 'package:iscapp/views/screens/homeScreen.dart';
 import 'package:iscapp/views/screens/profileScreen.dart';
+import 'package:iscapp/views/screens/studentProjectsScreen.dart';
 
 class bottomNav extends StatefulWidget {
   const bottomNav({super.key});
@@ -17,7 +18,7 @@ class _bottomNavState extends State<bottomNav> {
     homeScreen(),
     profileScreen(),
     coursesScreen(),
-    // profileScreen(),
+    studentProjectsScreen(),
   ];
   PageController _pageController = PageController(initialPage: 0);
 
