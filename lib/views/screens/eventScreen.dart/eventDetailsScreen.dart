@@ -4,20 +4,21 @@ import 'package:iscapp/views/screens/coursesScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
-class courseDetailsScreen extends StatefulWidget {
-  const courseDetailsScreen({super.key});
+class eventDetailsScreen extends StatefulWidget {
+  const eventDetailsScreen({super.key});
 
   @override
-  State<courseDetailsScreen> createState() => _courseDetailsScreenState();
+  State<eventDetailsScreen> createState() => _eventDetailsScreenState();
 }
 
-class _courseDetailsScreenState extends State<courseDetailsScreen> {
+class _eventDetailsScreenState extends State<eventDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
+          horizontal: MediaQuery.of(context).size.width * 0.05,
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -43,7 +44,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                     ),
                   ),
                   Text(
-                    "Course Details",
+                    "Event Details",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -76,7 +77,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "PLC programming",
+                    "Journey to space 5",
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
                     style:
@@ -112,7 +113,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "About this course",
+                  "About this event",
                   style: TextStyle(color: myColors.primaryColor, fontSize: 25),
                 ),
               ),
