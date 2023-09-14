@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
-import 'package:iscapp/views/screens/coursesScreen.dart';
-import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
 class eventDetailsScreen extends StatefulWidget {

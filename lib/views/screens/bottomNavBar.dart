@@ -16,9 +16,9 @@ class _bottomNavState extends State<bottomNav> {
   int _pageIndex = 0;
   List<Widget> _pages = [
     homeScreen(),
-    profileScreen(),
-    coursesScreen(),
     studentProjectsScreen(),
+    coursesScreen(),
+    profileScreen(),
   ];
   PageController _pageController = PageController(initialPage: 0);
 

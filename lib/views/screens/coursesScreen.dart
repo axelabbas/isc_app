@@ -19,9 +19,15 @@ class AdaptiveTextSize {
   }
 }
 
-class _coursesScreenState extends State<coursesScreen> {
+class _coursesScreenState extends State<coursesScreen>
+    with AutomaticKeepAliveClientMixin<coursesScreen> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
