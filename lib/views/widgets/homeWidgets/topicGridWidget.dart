@@ -8,7 +8,7 @@ topicGridWidget(List<Widget> children) {
       crossAxisSpacing: 50,
       mainAxisSpacing: 30,
       crossAxisCount: 2,
-      childAspectRatio: (110 / 130),
+      childAspectRatio: (110 / 110),
       children: children,
     ),
   );

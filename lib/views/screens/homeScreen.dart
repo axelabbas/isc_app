@@ -64,14 +64,6 @@ class _homeScreenState extends State<homeScreen>
             SizedBox(
               height: 30,
             ),
-            // used underline decoartion instead of divider
-            // so that the underline will always equal the width of text
-            // Divider(
-            //   color: myColors.primaryColor,
-            //   height: 5,
-            //   indent: 0,
-            //   endIndent: 410,
-            // )
             topicGridWidget(
               [
                 topicWidget("assets/images/icons/labicon.png", "Projects"),
