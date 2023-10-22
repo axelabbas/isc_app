@@ -4,15 +4,15 @@ import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/studentProject.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 
-class projectDetailsScreen extends StatefulWidget {
-  late StudentProject project;
-  projectDetailsScreen({super.key, required this.project});
+class ProjectDetailsScreen extends StatefulWidget {
+  final StudentProject project;
+  ProjectDetailsScreen({super.key, required this.project});
 
   @override
-  State<projectDetailsScreen> createState() => _projectDetailsScreenState();
+  State<ProjectDetailsScreen> createState() => _ProjectDetailsScreenState();
 }
 
-class _projectDetailsScreenState extends State<projectDetailsScreen> {
+class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   double _anchor = 0.0;
   bool _center = true;
   double _velocityFactor = 0.2;
@@ -21,7 +21,7 @@ class _projectDetailsScreenState extends State<projectDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = InfiniteScrollController();
+    _controller = InfiniteScrollController(initialItem: 1);
   }
 
   @override

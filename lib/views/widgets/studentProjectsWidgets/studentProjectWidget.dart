@@ -10,7 +10,7 @@ studentProjectWidget(context, StudentProject project) {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => projectDetailsScreen(
+              builder: (context) => ProjectDetailsScreen(
                     project: project,
                   )));
     },
