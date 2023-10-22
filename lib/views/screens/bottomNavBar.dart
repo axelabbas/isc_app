@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
-import 'package:iscapp/views/screens/coursesScreen.dart';
-import 'package:iscapp/views/screens/homeScreen.dart';
-import 'package:iscapp/views/screens/profileScreen.dart';
-import 'package:iscapp/views/screens/studentProjectsScreen.dart';
+import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
+import 'package:iscapp/views/screens/homeScreens/homeScreen.dart';
+import 'package:iscapp/views/screens/profileScreens/profileScreen.dart';
+import 'package:iscapp/views/screens/projectScreens/studentProjectsScreen.dart';
+import 'package:provider/provider.dart';
 
 class bottomNav extends StatefulWidget {
   const bottomNav({super.key});
@@ -16,7 +18,9 @@ class _bottomNavState extends State<bottomNav> {
   int _pageIndex = 0;
   List<Widget> _pages = [
     homeScreen(),
-    studentProjectsScreen(),
+    ChangeNotifierProvider(
+        create: (context) => ProjectsProvider(),
+        child: studentProjectsScreen()),
     coursesScreen(),
     profileScreen(),
   ];
@@ -50,7 +54,7 @@ class _bottomNavState extends State<bottomNav> {
                 label: "HOME"),
             BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage("assets/images/icons/labicon.png"),
+                  AssetImage("assets/images/icons/labIcon.png"),
                 ),
                 label: "HOME"),
             BottomNavigationBarItem(

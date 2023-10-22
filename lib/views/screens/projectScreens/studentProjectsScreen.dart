@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/models/studentProject.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/studentProjectsWidgets/studentProjectWidget.dart';
+import 'package:provider/provider.dart';
 
 class studentProjectsScreen extends StatefulWidget {
   const studentProjectsScreen({super.key});
@@ -27,7 +30,9 @@ class _studentProjectsScreenState extends State<studentProjectsScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
+    context.read<ProjectsProvider>().generateList();
+    List<StudentProject> projectList =
+        context.watch<ProjectsProvider>().projects;
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -74,10 +79,10 @@ class _studentProjectsScreenState extends State<studentProjectsScreen>
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: 5, // Replace with your actual item count
+              itemCount:
+                  projectList.length, // Replace with your actual item count
               itemBuilder: (context, index) {
-                return studentProjectWidget(context,
-                    "Fully functioning robot arm", "Ali Jasem, Suzan Abbas");
+                return studentProjectWidget(context, projectList[index]);
               },
             ),
             Text("test")

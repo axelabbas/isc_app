@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/views/screens/eventScreen.dart/eventDetailsScreen.dart';
+import 'package:iscapp/views/screens/eventScreens/eventDetailsScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicGridWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicWidget.dart';
@@ -66,9 +66,9 @@ class _homeScreenState extends State<homeScreen>
             ),
             topicGridWidget(
               [
-                topicWidget("assets/images/icons/labicon.png", "Projects"),
+                topicWidget("assets/images/icons/labIcon.png", "Projects"),
                 topicWidget("assets/images/icons/Workshhop.png", "Courses"),
-                topicWidget("assets/images/icons/workshopIdea.png", "Lab"),
+                topicWidget("assets/images/icons/workshopidea.png", "Lab"),
                 topicWidget("assets/images/icons/calender.png", "Events"),
               ],
             )

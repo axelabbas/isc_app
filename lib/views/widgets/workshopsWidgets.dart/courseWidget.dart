@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/views/screens/coursesScreen.dart';
+import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
 import 'package:iscapp/views/screens/coursesScreens/CourseDetailsScreen.dart';
 
 courseWidget(context, title, lessonCount, startDay, endDay, time) {
