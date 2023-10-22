@@ -1,5 +1,3 @@
-import 'package:carousel_images/carousel_images.dart';
-import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:iscapp/models/colorsClass.dart';
