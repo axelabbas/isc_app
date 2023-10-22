@@ -27,7 +27,8 @@ class ProjectsProvider extends ChangeNotifier {
     for (int i = 0; i < 10; i++) {
       _projects.add(StudentProject(
           title: "Project $i",
-          bio: "This is the bio of projectt $i",
+          bio:
+              "Sunt voluptate officia ut officia sunt magna non est nostrud commodo. Mollit sint veniam laborum do enim. Reprehenderit reprehenderit tempor tempor ex ea elit incididunt deserunt. Sit nulla magna sunt minim duis deserunt occaecat consectetur. Minim et proident ex eiusmod deserunt. Elit eu eiusmod dolor nisi est amet. Et sint in et consequat voluptate enim aute id cupidatat.",
           images: [
             "assets/images/TESTIMAGE.png",
             "assets/images/TESTIMAGE.png",

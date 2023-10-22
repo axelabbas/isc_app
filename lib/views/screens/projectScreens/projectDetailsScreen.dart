@@ -50,8 +50,12 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 Icon(Icons.favorite_border_outlined)
               ],
             ),
-            Text(
-              widget.project.bio,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                widget.project.bio,
+                textAlign: TextAlign.left,
+              ),
             ),
             Container(
               height: 400,
@@ -91,7 +95,33 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                       ));
                 },
               ),
-            )
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text(widget.project.teamMembers.toString()),
+              horizontalTitleGap: 5,
+            ),
+            ListTile(
+              leading: Icon(Icons.lightbulb),
+              title: Text(widget.project.isAssisted
+                  ? "This project was assisted by ISC"
+                  : "This project was not assisted by ISC"),
+              horizontalTitleGap: 5,
+            ),
+            ListTile(
+              leading: Icon(Icons.lightbulb),
+              title: Text(DateTime.now()
+                      .difference(widget.project.dateCompleted)
+                      .inDays
+                      .toString() +
+                  " days ago"),
+              horizontalTitleGap: 5,
+            ),
+            ListTile(
+              leading: Icon(Icons.place),
+              title: Text(widget.project.platform),
+              horizontalTitleGap: 5,
+            ),
           ],
         ),
       ),
