@@ -3,7 +3,7 @@ import 'package:iscapp/models/studentProject.dart';
 
 class ProjectsProvider extends ChangeNotifier {
   List<StudentProject> _projects = [];
-  List<StudentProject> _favoriteProjects = [];
+  // List<StudentProject> _favoriteProjects = [];
 
   List<StudentProject> get projects => _projects;
 
@@ -32,7 +32,7 @@ class ProjectsProvider extends ChangeNotifier {
           images: [
             "assets/images/TESTIMAGE.png",
             "assets/images/TESTIMAGE.png",
-            "assets/images/TESTIMAGE.png",
+            "assets/images/TESTIMAGE.png", 
           ],
           teamMembers: ["member1", "member2"],
           isAssisted: false,
