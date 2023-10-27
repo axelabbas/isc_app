@@ -3,6 +3,7 @@ import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
 import 'package:iscapp/views/screens/homeScreens/homeScreen.dart';
+import 'package:iscapp/views/screens/labScreens/labScreen.dart';
 import 'package:iscapp/views/screens/profileScreens/profileScreen.dart';
 import 'package:iscapp/views/screens/projectScreens/studentProjectsScreen.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class _bottomNavState extends State<bottomNav> {
         create: (context) => ProjectsProvider(),
         child: studentProjectsScreen()),
     coursesScreen(),
+    LabScreen(),
     profileScreen(),
   ];
   PageController _pageController = PageController(initialPage: 0);
@@ -55,6 +57,11 @@ class _bottomNavState extends State<bottomNav> {
             BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage("assets/images/icons/labIcon.png"),
+                ),
+                label: "HOME"),
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage("assets/images/icons/Points.png"),
                 ),
                 label: "HOME"),
             BottomNavigationBarItem(
