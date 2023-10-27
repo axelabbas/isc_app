@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/views/screens/eventScreens/eventDetailsScreen.dart';
 import 'package:iscapp/views/screens/eventScreens/eventsListScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicGridWidget.dart';
