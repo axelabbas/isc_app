@@ -53,7 +53,7 @@ studentProjectWidget(context, StudentProject project) {
                             fontSize: AdaptiveTextSize()
                                 .getadaptiveTextSize(context, 25),
                             fontWeight: FontWeight.bold)),
-                    Text(project.teamMembers.toString(),
+                    Text(project.teamMembers.join(", "),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.justify,

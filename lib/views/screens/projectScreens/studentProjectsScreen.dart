@@ -85,7 +85,6 @@ class _studentProjectsScreenState extends State<studentProjectsScreen>
                 return studentProjectWidget(context, projectList[index]);
               },
             ),
-            Text("test")
           ],
         ),
       ),

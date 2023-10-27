@@ -80,7 +80,6 @@ class _coursesScreenState extends State<coursesScreen>
                     context, "PCL programming", 5, "Mon", "Thr", "10:00 AM");
               },
             ),
-            Text("test")
           ],
         ),
       ),

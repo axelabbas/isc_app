@@ -6,9 +6,9 @@ topicGridWidget(List<Widget> children) {
     child: GridView.count(
       shrinkWrap: true,
       crossAxisSpacing: 50,
-      mainAxisSpacing: 30,
+      mainAxisSpacing: 25,
       crossAxisCount: 2,
-      childAspectRatio: (110 / 110),
+      childAspectRatio: (1 / 1),
       children: children,
     ),
   );
