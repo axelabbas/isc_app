@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
 class courseDetailsScreen extends StatefulWidget {
@@ -13,46 +14,13 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(context, "Course Details"),
       body: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: Navigator.of(context).pop,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(25),
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 0,
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                color: Colors.black.withOpacity(0.25))
-                          ]),
-                      child: Icon(Icons.arrow_back),
-                    ),
-                  ),
-                  Text(
-                    "Course Details",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  ImageIcon(
-                    AssetImage("assets/images/logo-on.png"),
-                    color: myColors.primaryColor,
-                    size: 60,
-                  )
-                ],
-              ),
               SizedBox(
                 height: 25,
               ),

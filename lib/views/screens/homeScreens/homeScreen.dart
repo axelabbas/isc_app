@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/views/screens/eventScreens/eventDetailsScreen.dart';
+import 'package:iscapp/views/screens/eventScreens/eventsListScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicGridWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicWidget.dart';
@@ -33,10 +34,8 @@ class _homeScreenState extends State<homeScreen>
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => eventDetailsScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EventListScreen()));
               },
               child: mainEventWidget("Journey to space 5", "Mon 17/5",
                   "5:34:16", "assets/images/spaceman.jpg", context),

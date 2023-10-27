@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
 class eventDetailsScreen extends StatefulWidget {
@@ -13,6 +14,42 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Row(
+      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //           children: [
+      //             InkWell(
+      //               onTap: Navigator.of(context).pop,
+      //               child: Container(
+      //                 height: 30,
+      //                 width: 30,
+      //                 decoration: BoxDecoration(
+      //                     color: Colors.white,
+      //                     borderRadius: BorderRadius.circular(25),
+      //                     boxShadow: [
+      //                       BoxShadow(
+      //                           spreadRadius: 0,
+      //                           blurRadius: 4,
+      //                           offset: Offset(0, 4),
+      //                           color: Colors.black.withOpacity(0.25))
+      //                     ]),
+      //                 child: Icon(Icons.arrow_back),
+      //               ),
+      //             ),
+      //             Text(
+      //               "Event Details",
+      //               style: TextStyle(
+      //                 fontWeight: FontWeight.bold,
+      //               ),
+      //             ),
+      //             ImageIcon(
+      //               AssetImage("assets/images/logo-on.png"),
+      //               color: myColors.primaryColor,
+      //               size: 60,
+      //             )
+      //           ],
+      //         ),
+      appBar: customAppBar(context, "Event Details"),
+
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -20,40 +57,6 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: Navigator.of(context).pop,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(25),
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 0,
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                color: Colors.black.withOpacity(0.25))
-                          ]),
-                      child: Icon(Icons.arrow_back),
-                    ),
-                  ),
-                  Text(
-                    "Event Details",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  ImageIcon(
-                    AssetImage("assets/images/logo-on.png"),
-                    color: myColors.primaryColor,
-                    size: 60,
-                  )
-                ],
-              ),
               SizedBox(
                 height: 25,
               ),

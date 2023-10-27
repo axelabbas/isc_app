@@ -33,10 +33,10 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(context, "Project Details"),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            appBarWidget("Project Details"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
