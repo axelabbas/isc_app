@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
 class eventDetailsScreen extends StatefulWidget {
-  const eventDetailsScreen({super.key});
+  final Event event;
+  eventDetailsScreen({super.key, required this.event});
 
   @override
   State<eventDetailsScreen> createState() => _eventDetailsScreenState();
@@ -14,42 +16,7 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //           children: [
-      //             InkWell(
-      //               onTap: Navigator.of(context).pop,
-      //               child: Container(
-      //                 height: 30,
-      //                 width: 30,
-      //                 decoration: BoxDecoration(
-      //                     color: Colors.white,
-      //                     borderRadius: BorderRadius.circular(25),
-      //                     boxShadow: [
-      //                       BoxShadow(
-      //                           spreadRadius: 0,
-      //                           blurRadius: 4,
-      //                           offset: Offset(0, 4),
-      //                           color: Colors.black.withOpacity(0.25))
-      //                     ]),
-      //                 child: Icon(Icons.arrow_back),
-      //               ),
-      //             ),
-      //             Text(
-      //               "Event Details",
-      //               style: TextStyle(
-      //                 fontWeight: FontWeight.bold,
-      //               ),
-      //             ),
-      //             ImageIcon(
-      //               AssetImage("assets/images/logo-on.png"),
-      //               color: myColors.primaryColor,
-      //               size: 60,
-      //             )
-      //           ],
-      //         ),
       appBar: customAppBar(context, "Event Details"),
-
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.05,
@@ -66,7 +33,7 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage("assets/images/spaceman.jpg"),
+                    image: AssetImage(widget.event.image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -78,7 +45,7 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Journey to space 5",
+                    widget.event.title,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
                     style:
@@ -99,13 +66,13 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                       Icon(
                         Icons.calendar_month,
                       ),
-                      "15/9 - 17/10"),
+                      widget.event.date.toString()),
                   courseDetailsWidget(
-                      context, Icon(Icons.timelapse), "10:30 AM"),
+                      context, Icon(Icons.timelapse), widget.event.time),
+                  courseDetailsWidget(context, Icon(Icons.logout),
+                      widget.event.points.toString() + "+ Points"),
                   courseDetailsWidget(
-                      context, Icon(Icons.logout), "+500 Points"),
-                  courseDetailsWidget(
-                      context, Icon(Icons.checklist), "Requires Laptop"),
+                      context, Icon(Icons.location_pin), widget.event.location),
                 ],
               ),
               SizedBox(

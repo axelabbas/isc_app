@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/eventsProvider.dart';
+import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/screens/eventScreens/eventsListScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicGridWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/mainEventWidget.dart';
 import "package:iscapp/models/colorsClass.dart";
+import 'package:provider/provider.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -17,11 +20,12 @@ class _homeScreenState extends State<homeScreen>
     with AutomaticKeepAliveClientMixin<homeScreen> {
   @override
   bool get wantKeepAlive => true;
-
+  @override
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
+    context.read<EventsProvider>().generateList();
+    Event mainEvent = context.read<EventsProvider>().mainEvent;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: SingleChildScrollView(
@@ -36,8 +40,8 @@ class _homeScreenState extends State<homeScreen>
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => EventListScreen()));
               },
-              child: mainEventWidget("Journey to space 5", "Mon 17/5",
-                  "5:34:16", "assets/images/spaceman.jpg", context),
+              child: mainEventWidget(mainEvent.title, mainEvent.date.toString(),
+                  mainEvent.time, mainEvent.image, context),
             ),
             SizedBox(
               height: 50,

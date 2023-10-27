@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
 import 'package:iscapp/views/screens/eventScreens/eventDetailsScreen.dart';
 
 class eventCardWidget extends StatefulWidget {
-  const eventCardWidget({super.key});
+  final Event event;
+  eventCardWidget({super.key, required this.event});
 
   @override
   State<eventCardWidget> createState() => _eventCardWidgetState();
@@ -14,8 +16,12 @@ class _eventCardWidgetState extends State<eventCardWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => eventDetailsScreen()));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => eventDetailsScreen(
+                      event: widget.event,
+                    )));
       },
       child: Container(
         height: MediaQuery.of(context).size.width * 0.17,
@@ -48,7 +54,7 @@ class _eventCardWidgetState extends State<eventCardWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Journey to space 5",
+                      Text(widget.event.title,
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.justify,
@@ -58,7 +64,7 @@ class _eventCardWidgetState extends State<eventCardWidget> {
                               fontWeight: FontWeight.bold)),
                       Row(
                         children: [
-                          Text("Mon 17/5 10:30 AM",
+                          Text("${widget.event.date} ${widget.event.time}",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.justify,

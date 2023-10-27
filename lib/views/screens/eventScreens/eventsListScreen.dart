@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/eventsProvider.dart';
+import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/eventsWidgets/eventCardWidget.dart';
+import 'package:provider/provider.dart';
 
 class EventListScreen extends StatefulWidget {
   const EventListScreen({super.key});
@@ -12,22 +15,28 @@ class EventListScreen extends StatefulWidget {
 class _EventListScreenState extends State<EventListScreen> {
   @override
   Widget build(BuildContext context) {
+    List<Event> Events = context.read<EventsProvider>().events;
+
     return Scaffold(
       appBar: customAppBar(context, "Events"),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 25,
-          ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 5, // Replace with your actual item count
-            itemBuilder: (context, index) {
-              return eventCardWidget();
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 25,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: Events.length, // Replace with your actual item count
+              itemBuilder: (context, index) {
+                return eventCardWidget(
+                  event: Events[index],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
