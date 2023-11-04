@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/studentProject.dart';
+import 'package:iscapp/views/screens/projectScreens/newProject.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/studentProjectsWidgets/studentProjectWidget.dart';
 import 'package:provider/provider.dart';
@@ -68,7 +70,14 @@ class _studentProjectsScreenState extends State<studentProjectsScreen>
                       borderRadius: BorderRadius.circular(25),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ChangeNotifierProvider(
+                                create: (context) => RadioButtonModel(),
+                                child: NewProjectForm()))));
+                  },
                   child: Center(
                     child: Text("Submit a Project"),
                   )),

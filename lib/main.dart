@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:iscapp/controllers/eventsProvider.dart';
-import 'package:iscapp/views/screens/bottomNavBar.dart';
+import 'package:iscapp/views/screens/splashScreen/splashScreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -11,7 +10,7 @@ void main() {
       ChangeNotifierProvider(create: (context) => EventsProvider()),
     ],
     child: MaterialApp(
-      home: bottomNav(),
+      home: SplashScreen(),
       theme: ThemeData(fontFamily: "Poppins"),
       debugShowCheckedModeBanner: false,
     ),

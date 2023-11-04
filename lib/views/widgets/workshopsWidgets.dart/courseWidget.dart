@@ -9,7 +9,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
           MaterialPageRoute(builder: (context) => courseDetailsScreen()));
     },
     child: Container(
-      height: MediaQuery.of(context).size.width * 0.17,
+      height: MediaQuery.of(context).size.width * 0.18,
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,

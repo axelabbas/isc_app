@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/views/screens/coursesScreens/newCourseScreen.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseWidget.dart';
+import 'package:provider/provider.dart';
 
 class coursesScreen extends StatefulWidget {
   const coursesScreen({super.key});
@@ -63,7 +66,14 @@ class _coursesScreenState extends State<coursesScreen>
                       borderRadius: BorderRadius.circular(25),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ChangeNotifierProvider(
+                                create: (context) => RadioButtonModel(),
+                                child: NewCourseForm()))));
+                  },
                   child: Center(
                     child: Text("Submit a course"),
                   )),

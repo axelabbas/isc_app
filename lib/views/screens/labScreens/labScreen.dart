@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
+import 'package:iscapp/views/screens/labScreens/newLabForm.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
+import 'package:provider/provider.dart';
 
 class LabScreen extends StatefulWidget {
   const LabScreen({super.key});
@@ -48,7 +51,14 @@ class _LabScreenState extends State<LabScreen> {
                     borderRadius: BorderRadius.circular(25),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => ChangeNotifierProvider(
+                              create: (context) => RadioButtonModel(),
+                              child: NewLabForm()))));
+                },
                 child: Center(
                   child: Text("Pitch us in"),
                 )),
