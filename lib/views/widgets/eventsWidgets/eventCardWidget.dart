@@ -49,7 +49,7 @@ class _eventCardWidgetState extends State<eventCardWidget> {
             Container(
               padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.of(context).size.width * 0.6,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,

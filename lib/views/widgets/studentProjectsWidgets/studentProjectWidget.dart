@@ -46,7 +46,7 @@ studentProjectWidget(context, StudentProject project) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(project.title,
-                        maxLines: 4,
+                        maxLines: 1 ,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.justify,
                         style: TextStyle(

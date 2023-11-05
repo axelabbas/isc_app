@@ -32,7 +32,7 @@ class ProjectsProvider extends ChangeNotifier {
           images: [
             "assets/images/TESTIMAGE.png",
             "assets/images/TESTIMAGE.png",
-            "assets/images/TESTIMAGE.png", 
+            "assets/images/TESTIMAGE.png",
           ],
           teamMembers: ["member1", "member2"],
           isAssisted: false,

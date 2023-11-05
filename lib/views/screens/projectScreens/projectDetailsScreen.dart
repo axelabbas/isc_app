@@ -37,28 +37,45 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.project.title,
-                  style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.w400,
-                      color: myColors.primaryColor),
-                ),
-                Icon(Icons.favorite_border_outlined)
-              ],
+            SizedBox(
+              height: 30,
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                widget.project.bio,
-                textAlign: TextAlign.left,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.project.title,
+                        maxLines: 1,
+                        style: TextStyle(
+                            fontSize: 34,
+                            fontWeight: FontWeight.w400,
+                            color: myColors.primaryColor),
+                      ),
+                      Icon(Icons.favorite_border_outlined)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      widget.project.bio,
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
-              height: 400,
+              height: MediaQuery.of(context).size.height * 0.4,
               child: InfiniteCarousel.builder(
                 itemExtent: _itemExtent,
                 center: _center,
@@ -96,31 +113,53 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                 },
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text(widget.project.teamMembers.toString()),
-              horizontalTitleGap: 5,
+            SizedBox(
+              height: 25,
             ),
-            ListTile(
-              leading: Icon(Icons.lightbulb),
-              title: Text(widget.project.isAssisted
-                  ? "This project was assisted by ISC"
-                  : "This project was not assisted by ISC"),
-              horizontalTitleGap: 5,
-            ),
-            ListTile(
-              leading: Icon(Icons.lightbulb),
-              title: Text(DateTime.now()
-                      .difference(widget.project.dateCompleted)
-                      .inDays
-                      .toString() +
-                  " days ago"),
-              horizontalTitleGap: 5,
-            ),
-            ListTile(
-              leading: Icon(Icons.place),
-              title: Text(widget.project.platform),
-              horizontalTitleGap: 5,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: Icon(
+                      Icons.person,
+                      size: 35,
+                    ),
+                    title: Text(widget.project.teamMembers.join(", ")),
+                    horizontalTitleGap: 5,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.lightbulb,
+                      size: 35,
+                    ),
+                    title: Text(widget.project.isAssisted
+                        ? "This project was assisted by ISC"
+                        : "This project was not assisted by ISC"),
+                    horizontalTitleGap: 5,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.lightbulb,
+                      size: 35,
+                    ),
+                    title: Text(DateTime.now()
+                            .difference(widget.project.dateCompleted)
+                            .inDays
+                            .toString() +
+                        " days ago"),
+                    horizontalTitleGap: 5,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.place,
+                      size: 35,
+                    ),
+                    title: Text(widget.project.platform),
+                    horizontalTitleGap: 5,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
