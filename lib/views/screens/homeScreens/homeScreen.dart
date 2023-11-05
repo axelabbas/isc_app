@@ -26,9 +26,10 @@ class _homeScreenState extends State<homeScreen>
     super.build(context);
     context.read<EventsProvider>().generateList();
     Event mainEvent = context.read<EventsProvider>().mainEvent;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: Column(
           children: [
             appBarWidget("Welcome, USERNAME"),
