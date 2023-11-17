@@ -3,7 +3,7 @@ import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/studentProject.dart';
-import 'package:iscapp/views/screens/projectScreens/newProject.dart';
+import 'package:iscapp/views/screens/projects/newProject.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/studentProjectsWidgets/studentProjectWidget.dart';
 import 'package:provider/provider.dart';

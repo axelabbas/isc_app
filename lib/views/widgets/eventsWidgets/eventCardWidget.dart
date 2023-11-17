@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/eventClass.dart';
-import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
-import 'package:iscapp/views/screens/eventScreens/eventDetailsScreen.dart';
+import 'package:iscapp/views/screens/courses/coursesList.dart';
+import 'package:iscapp/views/screens/events/eventDetails.dart';
 
 class eventCardWidget extends StatefulWidget {
   final Event event;

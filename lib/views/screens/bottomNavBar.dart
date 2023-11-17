@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
-import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
-import 'package:iscapp/views/screens/homeScreens/homeScreen.dart';
-import 'package:iscapp/views/screens/labScreens/labScreen.dart';
-import 'package:iscapp/views/screens/profileScreens/profileScreen.dart';
-import 'package:iscapp/views/screens/projectScreens/studentProjectsScreen.dart';
+import 'package:iscapp/views/screens/courses/coursesList.dart';
+import 'package:iscapp/views/screens/home/home.dart';
+import 'package:iscapp/views/screens/lab/labHome.dart';
+import 'package:iscapp/views/screens/profile/profileScreen.dart';
+import 'package:iscapp/views/screens/projects/studentProjects.dart';
 import 'package:provider/provider.dart';
 
 class bottomNav extends StatefulWidget {

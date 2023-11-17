@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
-import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
-import 'package:iscapp/views/screens/labScreens/newLabForm.dart';
+import 'package:iscapp/views/screens/courses/coursesList.dart';
+import 'package:iscapp/views/screens/lab/newLabForm.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:provider/provider.dart';
 

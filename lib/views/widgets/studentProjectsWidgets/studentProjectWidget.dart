@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/studentProject.dart';
 
-import 'package:iscapp/views/screens/coursesScreens/coursesScreen.dart';
-import 'package:iscapp/views/screens/projectScreens/projectDetailsScreen.dart';
+import 'package:iscapp/views/screens/courses/coursesList.dart';
+import 'package:iscapp/views/screens/projects/projectDetails.dart';
 
 studentProjectWidget(context, StudentProject project) {
   return InkWell(
