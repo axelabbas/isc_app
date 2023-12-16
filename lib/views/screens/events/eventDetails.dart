@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
@@ -6,7 +7,7 @@ import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.d
 
 class eventDetailsScreen extends StatefulWidget {
   final Event event;
-  eventDetailsScreen({super.key, required this.event});
+  const eventDetailsScreen({super.key, required this.event});
 
   @override
   State<eventDetailsScreen> createState() => _eventDetailsScreenState();
@@ -24,12 +25,9 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: 25,
-              ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.35,
-                width: MediaQuery.of(context).size.width,
+                height: 235.h,
+                width: 350.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
@@ -39,7 +37,7 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,14 +47,14 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
                     style:
-                        TextStyle(color: myColors.primaryColor, fontSize: 25),
+                        TextStyle(color: myColors.primaryColor, fontSize: 20.h),
                   ),
                   Icon(Icons.favorite_border_outlined,
                       color: myColors.primaryColor)
                 ],
               ),
               SizedBox(
-                height: 25,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,29 +68,32 @@ class _eventDetailsScreenState extends State<eventDetailsScreen> {
                   courseDetailsWidget(
                       context, Icon(Icons.timelapse), widget.event.time),
                   courseDetailsWidget(context, Icon(Icons.logout),
-                      widget.event.points.toString() + "+ Points"),
+                      "${widget.event.points}+ Points"),
                   courseDetailsWidget(
                       context, Icon(Icons.location_pin), widget.event.location),
                 ],
               ),
               SizedBox(
-                height: 25,
+                height: 20.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "About this event",
-                  style: TextStyle(color: myColors.primaryColor, fontSize: 25),
+                  style:
+                      TextStyle(color: myColors.primaryColor, fontSize: 16.h),
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 5.h,
               ),
               Text(
-                  "Voluptate ut cillum ipsum aliquip id. Labore do qui esse nisi enim exercitation officia consectetur occaecat esse quis commodo velit consectetur. Et incididunt occaecat reprehenderit adipisicing aliquip laborum duis cillum excepteur consequat. Labore dolore anim culpa reprehenderit laborum id irure. Ipsum veniam minim magna fugiat qui incididunt irure incididunt magna consectetur nostrud. Do fugiat incididunt quis aute dolore exercitation pariatur officia."),
-              SizedBox(height: 30),
-              Container(
-                height: 50,
+                "With the current rapid changes in climate change taking a passive stance just isn't an option, so Globe aims to help people change their views on their part in the situation through providing them with real world rewards while also building a healthy community that will help our globe blossom again.",
+                style: TextStyle(fontSize: 12.sp),
+              ),
+              SizedBox(height: 25.h),
+              SizedBox(
+                height: 40.h,
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(

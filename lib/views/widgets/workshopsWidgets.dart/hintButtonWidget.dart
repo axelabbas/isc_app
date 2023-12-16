@@ -15,16 +15,10 @@ class buttonHintWidget extends StatelessWidget {
     return Column(
       children: [
         Text(title),
-        Container(
+        SizedBox(
             height: 50,
             width: 150,
             child: ElevatedButton(
-              child: Center(
-                child: ImageIcon(
-                  AssetImage(imgPath),
-                  color: Colors.white,
-                ),
-              ),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 shadowColor: Colors.black.withOpacity(0.5),
@@ -33,6 +27,12 @@ class buttonHintWidget extends StatelessWidget {
                 backgroundColor: myColors.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              child: Center(
+                child: ImageIcon(
+                  AssetImage(imgPath),
+                  color: Colors.white,
                 ),
               ),
             )),

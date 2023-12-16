@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class typesListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 70,
+        height: 60.h,
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width,
         child: ListView.builder(
@@ -30,11 +31,11 @@ class typesListWidget extends StatelessWidget {
                 left: index == 0
                     ? 0
                     : MediaQuery.of(context).size.width *
-                        0.05, // Space on the left of the first item
+                        0.039, // Space on the left of the first item
                 right: index == types.length - 1
                     ? 0
                     : MediaQuery.of(context).size.width *
-                        0.05, // Space on the right of all items except the last
+                        0.039, // Space on the right of all items except the last
               ),
               child: typeWidget(
                 selectedValueIndex: selectedValueIndex,

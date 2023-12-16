@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 
 class mainButtonWidget extends StatelessWidget {
   final String text;
-  final Function()? onTap;
+  final Function()? buttonClick;
 
   const mainButtonWidget({
     super.key,
     required this.text,
-    required this.onTap,
+    required this.buttonClick,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // margin: EdgeInsets.symmetric(vertical: 20),
-      height: MediaQuery.of(context).size.height * 0.05,
-      width: MediaQuery.of(context).size.width * 0.75,
+    return SizedBox(
+      height: 40.h,
+      width: 300.w,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shadowColor: Colors.black.withOpacity(0.5),
@@ -27,9 +27,12 @@ class mainButtonWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
             ),
           ),
-          onPressed: onTap,
+          onPressed: buttonClick,
           child: Center(
-            child: Text(text),
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w500),
+            ),
           )),
     );
   }

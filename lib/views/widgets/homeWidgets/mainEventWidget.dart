@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import "package:iscapp/models/colorsClass.dart";
 
 Widget mainEventWidget(mainText, subText, time, imgPath, context) {
@@ -83,15 +84,15 @@ Widget mainEventWidget(mainText, subText, time, imgPath, context) {
               bottomLeft: Radius.circular(5),
               bottomRight: Radius.circular(20)),
           child: Container(
-            height: 42,
-            width: 84,
+            height: 42.h,
+            width: 84.w,
             decoration: BoxDecoration(
               color: myColors.primaryColor,
             ),
             child: Center(
                 child: Text(
               time,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 14.sp),
             )),
           ),
         ),
@@ -104,14 +105,14 @@ Widget mainEventWidget(mainText, subText, time, imgPath, context) {
             style: TextStyle(
                 color: myColors.primaryColor,
                 fontWeight: FontWeight.bold,
-                fontSize: 20),
+                fontSize: 20.sp),
           )),
       Positioned(
           bottom: 10,
           left: 50,
           child: Text(
             subText,
-            style: TextStyle(color: myColors.primaryColor, fontSize: 15),
+            style: TextStyle(color: myColors.primaryColor, fontSize: 15.sp),
           )),
     ],
   );

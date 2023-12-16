@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 
 statsCardWidget(icon, count, title, context) {
-  final width = MediaQuery.of(context).size.width;
   return Container(
     padding: EdgeInsets.all(8),
-    width: width * .20,
+    width: 80.w,
     decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.black, width: .25),
+        border: Border.all(color: Colors.black, width: .25.w),
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
@@ -24,7 +24,7 @@ statsCardWidget(icon, count, title, context) {
           AssetImage(
             icon,
           ),
-          size: 30,
+          size: 30.sp,
           color: myColors.primaryColor,
         ),
         Text(

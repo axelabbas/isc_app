@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
@@ -28,9 +29,6 @@ class NewProjectFormState extends State<NewProjectForm> {
             ),
             child: Column(
               children: [
-                SizedBox(
-                  height: 40,
-                ),
                 formFieldWidget(
                   label: 'Project Name',
                   hint: 'Project name',
@@ -53,22 +51,25 @@ class NewProjectFormState extends State<NewProjectForm> {
                   hint: 'Project Description',
                 ),
                 Align(
-                  child: Text("Project Type"),
                   alignment: Alignment.centerLeft,
+                  child: Text("Project Type"),
+                ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 typesListWidget(
                     types: ProjectTypes,
                     selectedValueIndex: selectedValueIndex),
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
                 buttonHintWidget(
                     title: "Project photos",
                     imgPath: "assets/images/icons/attachImage.png"),
                 SizedBox(
-                  height: 50,
+                  height: 30.h,
                 ),
-                mainButtonWidget(text: "Submit", onTap: () {})
+                mainButtonWidget(text: "Submit", buttonClick: () {})
               ],
             ),
           ),

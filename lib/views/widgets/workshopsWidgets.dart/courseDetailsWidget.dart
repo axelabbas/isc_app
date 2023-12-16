@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget courseDetailsWidget(context, icon, title) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-    height: MediaQuery.of(context).size.height * 0.11,
-    width: MediaQuery.of(context).size.width * 0.2,
+    height: 80.h,
+    width: 75.w,
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -25,9 +26,12 @@ Widget courseDetailsWidget(context, icon, title) {
         icon,
         Text(
           title,
-          textAlign: TextAlign.center,
-          textScaleFactor: 0.8,
           maxLines: 2,
+          style: TextStyle(
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w500,
+          ),
+          textAlign: TextAlign.center,
           softWrap: false,
           overflow: TextOverflow.ellipsis,
         ),

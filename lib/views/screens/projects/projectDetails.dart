@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/studentProject.dart';
@@ -6,16 +7,16 @@ import 'package:iscapp/views/widgets/appBarWidget.dart';
 
 class ProjectDetailsScreen extends StatefulWidget {
   final StudentProject project;
-  ProjectDetailsScreen({super.key, required this.project});
+  const ProjectDetailsScreen({super.key, required this.project});
 
   @override
   State<ProjectDetailsScreen> createState() => _ProjectDetailsScreenState();
 }
 
 class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
-  double _anchor = 0.0;
-  bool _center = true;
-  double _velocityFactor = 0.2;
+  final double _anchor = 0.0;
+  final bool _center = true;
+  final double _velocityFactor = 0.2;
   final double _itemExtent = 320;
   late InfiniteScrollController _controller;
   @override
@@ -37,11 +38,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 30,
-            ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
                 children: [
                   Row(
@@ -51,7 +49,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                         widget.project.title,
                         maxLines: 1,
                         style: TextStyle(
-                            fontSize: 34,
+                            fontSize: 34.sp,
                             fontWeight: FontWeight.w400,
                             color: myColors.primaryColor),
                       ),
@@ -59,7 +57,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 15.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -72,9 +70,9 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 20.h,
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
               child: InfiniteCarousel.builder(
                 itemExtent: _itemExtent,
@@ -114,16 +112,16 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
               ),
             ),
             SizedBox(
-              height: 25,
+              height: 25.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Column(
                 children: [
                   ListTile(
                     leading: Icon(
                       Icons.person,
-                      size: 35,
+                      size: 27.sp,
                     ),
                     title: Text(widget.project.teamMembers.join(", ")),
                     horizontalTitleGap: 5,
@@ -131,7 +129,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                   ListTile(
                     leading: Icon(
                       Icons.lightbulb,
-                      size: 35,
+                      size: 27.sp,
                     ),
                     title: Text(widget.project.isAssisted
                         ? "This project was assisted by ISC"
@@ -141,19 +139,17 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                   ListTile(
                     leading: Icon(
                       Icons.lightbulb,
-                      size: 35,
+                      size: 27.sp,
                     ),
-                    title: Text(DateTime.now()
+                    title: Text("${DateTime.now()
                             .difference(widget.project.dateCompleted)
-                            .inDays
-                            .toString() +
-                        " days ago"),
+                            .inDays} days ago"),
                     horizontalTitleGap: 5,
                   ),
                   ListTile(
                     leading: Icon(
                       Icons.place,
-                      size: 35,
+                      size: 27.sp,
                     ),
                     title: Text(widget.project.platform),
                     horizontalTitleGap: 5,

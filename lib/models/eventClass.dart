@@ -4,7 +4,7 @@ class Event {
   late String image;
   late int points;
   late String time;
-  late DateTime date;
+  late String date;
   late String location;
 
   Event(

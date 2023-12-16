@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 
 statsTileWidget(icon, title, subtitle) {
@@ -6,7 +7,7 @@ statsTileWidget(icon, title, subtitle) {
     leading: ImageIcon(
       AssetImage(icon),
       color: myColors.primaryColor,
-      size: 30,
+      size: 30.sp,
     ),
     title: Text(
       title,

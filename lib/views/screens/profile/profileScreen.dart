@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iscapp/views/widgets/appBarWidget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/widgets/profileWidgets/statsCardWidget.dart';
 import 'package:iscapp/views/widgets/profileWidgets/statsTileWidget.dart';
 
@@ -20,32 +21,33 @@ class _profileScreenState extends State<profileScreen>
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        padding: EdgeInsets.symmetric(horizontal: 25.0.w),
         child: Column(
           children: [
-            SizedBox(
-              height: 25,
-            ),
             CircleAvatar(
-              backgroundImage: AssetImage("assets/images/spaceman.jpg"),
-              radius: 75,
+              radius: 72,
+              backgroundColor: myColors.primaryColor,
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/images/spaceman.jpg"),
+                radius: 70,
+              ),
             ),
             Align(
               alignment: Alignment.center,
               child: Text(
                 "James Arthus",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.sp),
               ),
             ),
             Align(
               alignment: Alignment.center,
               child: Text(
                 "Computer Science, 3rd",
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
               ),
             ),
             SizedBox(
-              height: 17,
+              height: 16.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,19 +56,19 @@ class _profileScreenState extends State<profileScreen>
                 statsCardWidget("assets/images/icons/taskList.png", "26",
                     "Signups", context),
                 SizedBox(
-                  width: 20,
+                  width: 20.w,
                 ),
                 statsCardWidget(
                     "assets/images/icons/Trophy.png", "15", "Rank", context),
                 SizedBox(
-                  width: 20,
+                  width: 20.w,
                 ),
                 statsCardWidget(
                     "assets/images/icons/Points.png", "26", "Points", context),
               ],
             ),
             SizedBox(
-              height: 50,
+              height: 30.h,
             ),
             statsTileWidget("assets/images/icons/Trophy.png", "15",
                 "UOT leaderboard ranking"),

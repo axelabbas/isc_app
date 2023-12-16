@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/notifications/notifications.dart';
 import 'package:iscapp/views/screens/settings/settings.dart';
@@ -12,7 +13,7 @@ customAppBar(context, title) {
       ImageIcon(
         AssetImage("assets/images/logo-on.png"),
         color: myColors.primaryColor,
-        size: 60,
+        size: 60.sp,
       )
     ],
     leading: InkWell(
@@ -38,7 +39,8 @@ customAppBar(context, title) {
     ),
     title: Text(
       title,
-      style: TextStyle(color: myColors.primaryColor),
+      style:
+          TextStyle(color: myColors.primaryColor, fontWeight: FontWeight.bold),
     ),
   );
 }
@@ -88,7 +90,7 @@ appBarWidget(context, title) {
         child: ImageIcon(
           AssetImage("assets/images/logo-on.png"),
           color: myColors.primaryColor,
-          size: 60,
+          size: 60.sp,
         ),
       )
     ],

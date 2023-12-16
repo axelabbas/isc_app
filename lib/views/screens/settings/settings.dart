@@ -16,7 +16,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: customAppBar(context, "Settings"),
       body: SingleChildScrollView(
         child: Column(
-          children: [
+          children: const [
             dropDownSetting(
               title: "Dark Mode",
               icon: Icons.person,

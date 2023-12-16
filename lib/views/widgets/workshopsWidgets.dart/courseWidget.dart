@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/views/screens/courses/courseDetails.dart';
-import 'package:iscapp/views/screens/courses/coursesList.dart';
 
 courseWidget(context, title, lessonCount, startDay, endDay, time) {
   return InkWell(
@@ -9,7 +9,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
           MaterialPageRoute(builder: (context) => courseDetailsScreen()));
     },
     child: Container(
-      height: MediaQuery.of(context).size.width * 0.18,
+      height: 95.h,
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -32,6 +32,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+            height: 100.h,
             padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -40,25 +41,19 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                 Text(title,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                        fontSize:
-                            AdaptiveTextSize().getadaptiveTextSize(context, 25),
-                        fontWeight: FontWeight.bold)),
+                        fontSize: 20.sp, fontWeight: FontWeight.bold)),
                 Text(
                   overflow: TextOverflow.ellipsis,
                   "$lessonCount lessons",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize:
-                          AdaptiveTextSize().getadaptiveTextSize(context, 20)),
+                  style:
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                 ),
                 Row(
                   children: [
                     Text(
                       overflow: TextOverflow.ellipsis,
                       "$startDay-$endDay",
-                      style: TextStyle(
-                          fontSize: AdaptiveTextSize()
-                              .getadaptiveTextSize(context, 18)),
+                      style: TextStyle(fontSize: 16.sp),
                     ),
                     SizedBox(
                       width: 15,
@@ -66,9 +61,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                     Text(
                       overflow: TextOverflow.ellipsis,
                       "$time",
-                      style: TextStyle(
-                          fontSize: AdaptiveTextSize()
-                              .getadaptiveTextSize(context, 18)),
+                      style: TextStyle(fontSize: 16.sp),
                     ),
                   ],
                 )
@@ -80,10 +73,8 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
           ),
           Container(
             margin: EdgeInsets.only(right: 2, top: 2, bottom: 2),
-            height: MediaQuery.of(context).size.width *
-                0.17, //> 100 ? 100 : imgSize,
-            width: MediaQuery.of(context).size.width *
-                0.17, //> 100 ? 100 : imgSize,
+            height: 100.h, //> 100 ? 100 : imgSize,
+            width: 100.w, //> 100 ? 100 : imgSize,
             decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/images/spaceman.jpg"),

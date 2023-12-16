@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
-import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/models/studentProject.dart';
 import 'package:iscapp/views/screens/projects/newProject.dart';
-import 'package:iscapp/views/widgets/appBarWidget.dart';
+import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
 import 'package:iscapp/views/widgets/studentProjectsWidgets/studentProjectWidget.dart';
 import 'package:provider/provider.dart';
 
@@ -13,15 +13,6 @@ class studentProjectsScreen extends StatefulWidget {
 
   @override
   State<studentProjectsScreen> createState() => _studentProjectsScreenState();
-}
-
-class AdaptiveTextSize {
-  const AdaptiveTextSize();
-
-  getadaptiveTextSize(BuildContext context, dynamic value) {
-    // 720 is medium screen height
-    return (value / 720) * MediaQuery.of(context).size.width;
-  }
 }
 
 class _studentProjectsScreenState extends State<studentProjectsScreen>
@@ -41,48 +32,30 @@ class _studentProjectsScreenState extends State<studentProjectsScreen>
             horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: Column(
           children: [
-            SizedBox(
-              height: 50,
-            ),
             Text(
               "You have a super cool project you want to showcase here?",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: AdaptiveTextSize().getadaptiveTextSize(context, 30),
+                fontSize: 20.sp,
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 40.h,
             ),
-            Container(
-              // margin: EdgeInsets.symmetric(vertical: 20),
-              height: 50,
-              width: MediaQuery.of(context).size.width * 0.5,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.black.withOpacity(0.5),
-                    elevation: 5,
-                    side: BorderSide(width: 1.0, color: Colors.white),
-                    backgroundColor: myColors.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) => ChangeNotifierProvider(
-                                create: (context) => RadioButtonModel(),
-                                child: NewProjectForm()))));
-                  },
-                  child: Center(
-                    child: Text("Submit a Project"),
-                  )),
+            mainButtonWidget(
+              text: "Submit a project",
+              buttonClick: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => ChangeNotifierProvider(
+                            create: (context) => RadioButtonModel(),
+                            child: NewProjectForm()))));
+              },
             ),
             SizedBox(
-              height: 30,
+              height: 35.h,
             ),
             ListView.builder(
               shrinkWrap: true,

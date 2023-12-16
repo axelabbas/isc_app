@@ -34,7 +34,7 @@ class EventsProvider extends ChangeNotifier {
         bio:
             "Sunt voluptate officia ut officia sunt magna non est nostrud commodo. Mollit sint veniam laborum do enim. Reprehenderit reprehenderit tempor tempor ex ea elit incididunt deserunt. Sit nulla magna sunt minim duis deserunt occaecat consectetur. Minim et proident ex eiusmod deserunt. Elit eu eiusmod dolor nisi est amet. Et sint in et consequat voluptate enim aute id cupidatat.",
         image: "assets/images/spaceman.jpg",
-        date: DateTime.now(),
+        date: DateFormat('yyyy-MM-dd').format(DateTime.now()),
         location: "location $i",
       ));
     }

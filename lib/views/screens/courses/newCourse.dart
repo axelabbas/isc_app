@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
@@ -27,13 +28,10 @@ class NewCourseFormState extends State<NewCourseForm> {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 20,
+              horizontal: 20.w,
             ),
             child: Column(
               children: [
-                SizedBox(
-                  height: 40,
-                ),
                 formFieldWidget(
                   label: 'Course Name',
                   hint: 'Course name',
@@ -60,17 +58,20 @@ class NewCourseFormState extends State<NewCourseForm> {
                   hint: 'Course Requiremnets',
                 ),
                 Align(
-                  child: Text("Course Type"),
                   alignment: Alignment.centerLeft,
+                  child: Text("Course Type"),
+                ),
+                SizedBox(
+                  height: 5.h,
                 ),
                 typesListWidget(
                     types: CourseTypes, selectedValueIndex: selectedValueIndex),
                 SizedBox(
-                  height: 20,
+                  height: 15.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
+                  children: const [
                     buttonHintWidget(
                         title: "Course material",
                         imgPath: "assets/images/icons/attachImage.png"),
@@ -80,9 +81,9 @@ class NewCourseFormState extends State<NewCourseForm> {
                   ],
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 30.h,
                 ),
-                mainButtonWidget(text: "Submit", onTap: () {})
+                mainButtonWidget(text: "Submit", buttonClick: () {})
               ],
             ),
           ),

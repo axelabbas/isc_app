@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/eventsProvider.dart';
 import 'package:iscapp/models/eventClass.dart';
 import 'package:iscapp/views/screens/events/eventsList.dart';
-import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicGridWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/topicWidget.dart';
 import 'package:iscapp/views/widgets/homeWidgets/mainEventWidget.dart';
@@ -20,7 +20,7 @@ class _homeScreenState extends State<homeScreen>
     with AutomaticKeepAliveClientMixin<homeScreen> {
   @override
   bool get wantKeepAlive => true;
-  @override
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -33,7 +33,7 @@ class _homeScreenState extends State<homeScreen>
         child: Column(
           children: [
             SizedBox(
-              height: 100,
+              height: MediaQuery.of(context).size.width * 0.10,
             ),
             InkWell(
               onTap: () {
@@ -44,14 +44,14 @@ class _homeScreenState extends State<homeScreen>
                   mainEvent.time, mainEvent.image, context),
             ),
             SizedBox(
-              height: 50,
+              height: 30.h,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Topics",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                   shadows: [
                     Shadow(color: myColors.primaryColor, offset: Offset(0, -10))
@@ -64,7 +64,7 @@ class _homeScreenState extends State<homeScreen>
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 30.h,
             ),
             topicGridWidget(
               [

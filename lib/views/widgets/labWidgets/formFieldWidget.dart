@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 
 class formFieldWidget extends StatelessWidget {
@@ -15,9 +16,9 @@ class formFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 5.h),
       child: TextFormField(
-        maxLines: isMultiline ? 5 : 1,
+        maxLines: isMultiline ? 3 : 1,
         keyboardType: TextInputType.multiline,
         decoration: InputDecoration(
           hintText: hint,

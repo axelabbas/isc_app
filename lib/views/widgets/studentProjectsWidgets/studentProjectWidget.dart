@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/studentProject.dart';
 
-import 'package:iscapp/views/screens/courses/coursesList.dart';
 import 'package:iscapp/views/screens/projects/projectDetails.dart';
 
 studentProjectWidget(context, StudentProject project) {
@@ -15,7 +15,7 @@ studentProjectWidget(context, StudentProject project) {
                   )));
     },
     child: Container(
-      height: MediaQuery.of(context).size.width * 0.17,
+      height: MediaQuery.of(context).size.width * 0.2,
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -39,28 +39,24 @@ studentProjectWidget(context, StudentProject project) {
         children: [
           Container(
             padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
-            child: Container(
+            child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.5,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(project.title,
-                        maxLines: 1 ,
+                        maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                            fontSize: AdaptiveTextSize()
-                                .getadaptiveTextSize(context, 25),
-                            fontWeight: FontWeight.bold)),
+                            fontSize: 18.sp, fontWeight: FontWeight.bold)),
                     Text(project.teamMembers.join(", "),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                            fontSize: AdaptiveTextSize()
-                                .getadaptiveTextSize(context, 20),
-                            fontWeight: FontWeight.w400)),
+                            fontSize: 14.sp, fontWeight: FontWeight.w400)),
                   ]),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
@@ -28,13 +29,10 @@ class NewLabFormState extends State<NewLabForm> {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 20,
+              horizontal: 20.w,
             ),
             child: Column(
               children: [
-                SizedBox(
-                  height: 40,
-                ),
                 formFieldWidget(
                   label: 'Project Name',
                   hint: 'Project name',
@@ -58,27 +56,27 @@ class NewLabFormState extends State<NewLabForm> {
                   hint: 'What help do you need?',
                 ),
                 Align(
-                  child: Text("Project Type"),
                   alignment: Alignment.centerLeft,
+                  child: Text("Project Type"),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5.h,
                 ),
                 typesListWidget(
                     types: projectTypes,
                     selectedValueIndex: selectedValueIndex),
                 SizedBox(
-                  height: 50,
+                  height: 25.h,
                 ),
                 buttonHintWidget(
                     title: "Project Photos",
                     imgPath: "assets/images/icons/attachImage.png"),
                 SizedBox(
-                  height: 50,
+                  height: 25.h,
                 ),
                 mainButtonWidget(
                   text: "Submit",
-                  onTap: () {},
+                  buttonClick: () {},
                 ),
               ],
             ),
