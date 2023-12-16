@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/models/colorsClass.dart';
+import 'package:iscapp/views/screens/notifications/notifications.dart';
+import 'package:iscapp/views/screens/settings/settings.dart';
 
 customAppBar(context, title) {
   return AppBar(
@@ -41,24 +43,28 @@ customAppBar(context, title) {
   );
 }
 
-appBarWidget(title) {
+appBarWidget(context, title) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Container(
-        height: 30,
-        width: 30,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(25),
-            boxShadow: [
-              BoxShadow(
-                  spreadRadius: 0,
-                  blurRadius: 4,
-                  offset: Offset(0, 4),
-                  color: Colors.black.withOpacity(0.25))
-            ]),
-        child: Icon(Icons.menu),
+      InkWell(
+        onTap: () => Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
+        child: Container(
+          height: 30,
+          width: 30,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              boxShadow: [
+                BoxShadow(
+                    spreadRadius: 0,
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
+                    color: Colors.black.withOpacity(0.25))
+              ]),
+          child: Icon(Icons.menu),
+        ),
       ),
       Text(
         title,
@@ -67,10 +73,17 @@ appBarWidget(title) {
           fontWeight: FontWeight.bold,
         ),
       ),
-      ImageIcon(
-        AssetImage("assets/images/logo-on.png"),
-        color: myColors.primaryColor,
-        size: 60,
+      InkWell(
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return NotficationsScreen();
+          }));
+        },
+        child: ImageIcon(
+          AssetImage("assets/images/logo-on.png"),
+          color: myColors.primaryColor,
+          size: 60,
+        ),
       )
     ],
   );

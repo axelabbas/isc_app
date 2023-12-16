@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/views/screens/courses/courseDetails.dart';
 import 'package:iscapp/views/screens/courses/coursesList.dart';
-import 'package:iscapp/views/screens/coursesScreens/CourseDetailsScreen.dart';
 
 courseWidget(context, title, lessonCount, startDay, endDay, time) {
   return InkWell(

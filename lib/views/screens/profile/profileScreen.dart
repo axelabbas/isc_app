@@ -23,7 +23,7 @@ class _profileScreenState extends State<profileScreen>
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
           children: [
-            appBarWidget("Profile"),
+            appBarWidget(context,"Profile"),
             SizedBox(
               height: 25,
             ),

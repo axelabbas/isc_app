@@ -32,7 +32,7 @@ class _homeScreenState extends State<homeScreen>
             horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: Column(
           children: [
-            appBarWidget("Welcome, USERNAME"),
+            appBarWidget(context, "Welcome, USERNAME"),
             SizedBox(
               height: 100,
             ),
