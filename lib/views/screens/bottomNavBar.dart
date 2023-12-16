@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/appBarProvider.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/courses/coursesList.dart';
@@ -6,6 +7,8 @@ import 'package:iscapp/views/screens/home/home.dart';
 import 'package:iscapp/views/screens/lab/labHome.dart';
 import 'package:iscapp/views/screens/profile/profileScreen.dart';
 import 'package:iscapp/views/screens/projects/studentProjects.dart';
+import 'package:iscapp/views/screens/settings/settings.dart';
+import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:provider/provider.dart';
 
 class bottomNav extends StatefulWidget {
@@ -30,7 +33,10 @@ class _bottomNavState extends State<bottomNav> {
 
   @override
   Widget build(BuildContext context) {
+    String appBarTitle = context.watch<AppBarProvider>().title;
+
     return Scaffold(
+      appBar: appBarWidget(context, "$appBarTitle"),
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -41,6 +47,7 @@ class _bottomNavState extends State<bottomNav> {
           currentIndex: _pageIndex,
           onTap: (value) => setState(() {
                 _pageIndex = value;
+                context.read<AppBarProvider>().changeTitle(_pageIndex);
                 _pageController.jumpToPage(_pageIndex);
               }),
           items: [

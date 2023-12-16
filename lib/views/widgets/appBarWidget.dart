@@ -44,35 +44,41 @@ customAppBar(context, title) {
 }
 
 appBarWidget(context, title) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      InkWell(
-        onTap: () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
-        child: Container(
-          height: 30,
-          width: 30,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25),
-              boxShadow: [
-                BoxShadow(
-                    spreadRadius: 0,
-                    blurRadius: 4,
-                    offset: Offset(0, 4),
-                    color: Colors.black.withOpacity(0.25))
-              ]),
-          child: Icon(Icons.menu),
+  return AppBar(
+    backgroundColor: Colors.white,
+    elevation: 0,
+    centerTitle: true,
+    leading: InkWell(
+      onTap: () => Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => SettingsScreen())),
+      child: Container(
+        margin: EdgeInsets.all(10),
+        width: 30,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(25),
+            boxShadow: [
+              BoxShadow(
+                  spreadRadius: 0,
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
+                  color: Colors.black.withOpacity(0.25))
+            ]),
+        child: Icon(
+          Icons.menu,
+          color: myColors.primaryColor,
         ),
       ),
-      Text(
-        title,
-        style: TextStyle(
-          fontFamily: "Poppins",
-          fontWeight: FontWeight.bold,
-        ),
+    ),
+    title: Text(
+      title,
+      style: TextStyle(
+        color: myColors.primaryColor,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.bold,
       ),
+    ),
+    actions: [
       InkWell(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) {

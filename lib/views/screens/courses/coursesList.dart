@@ -37,7 +37,6 @@ class _coursesScreenState extends State<coursesScreen>
             horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: Column(
           children: [
-            appBarWidget(context, "Courses & Workshops"),
             SizedBox(
               height: 50,
             ),

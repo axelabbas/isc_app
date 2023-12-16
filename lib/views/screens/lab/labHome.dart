@@ -22,7 +22,6 @@ class _LabScreenState extends State<LabScreen> {
             horizontal: MediaQuery.of(context).size.width * 0.05, vertical: 20),
         child: Column(
           children: [
-            appBarWidget(context,"The Lab"),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),

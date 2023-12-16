@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:iscapp/controllers/appBarProvider.dart';
 import 'package:iscapp/views/screens/bottomNavBar.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => bottomNav())));
+            context, MaterialPageRoute(builder: (context) => ChangeNotifierProvider(
+              create: (context) => AppBarProvider(),
+              child: bottomNav()))));
   }
 
   @override
