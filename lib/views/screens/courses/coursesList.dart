@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iscapp/controllers/coursesProvider.dart';
 import 'package:iscapp/controllers/labOptionsProvider.dart';
+import 'package:iscapp/models/CourseClass.dart';
 import 'package:iscapp/views/screens/courses/newCourse.dart';
 import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseWidget.dart';
@@ -21,7 +23,9 @@ class _coursesScreenState extends State<coursesScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
+    context.read<CoursesProvider>().generateList();
+    List<Course> coursesList =
+        context.read<CoursesProvider>().getCourses;
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -56,10 +60,10 @@ class _coursesScreenState extends State<coursesScreen>
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: 5, // Replace with your actual item count
+              itemCount: coursesList.length, // Replace with your actual item count
               itemBuilder: (context, index) {
                 return courseWidget(
-                    context, "PCL programming", 5, "Mon", "Thr", "10:00 AM");
+                    context, coursesList[index]);
               },
             ),
           ],

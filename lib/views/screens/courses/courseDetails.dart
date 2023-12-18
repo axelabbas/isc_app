@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iscapp/models/CourseClass.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/widgets/appBarWidget.dart';
 import 'package:iscapp/views/widgets/generalWidgets/mainButton.dart';
 import 'package:iscapp/views/widgets/workshopsWidgets.dart/courseDetailsWidget.dart';
 
-class courseDetailsScreen extends StatefulWidget {
-  const courseDetailsScreen({super.key});
+class courseDetailsScreen extends StatelessWidget {
+  final Course currentCourse;
+  const courseDetailsScreen({super.key, required this.currentCourse});
 
-  @override
-  State<courseDetailsScreen> createState() => _courseDetailsScreenState();
-}
-
-class _courseDetailsScreenState extends State<courseDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +26,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage("assets/images/spaceman.jpg"),
+                    image: AssetImage(currentCourse.image),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -41,7 +38,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "PLC programming",
+                    currentCourse.title,
                     overflow: TextOverflow.ellipsis,
                     softWrap: false,
                     style:
@@ -62,13 +59,17 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                       Icon(
                         Icons.calendar_month,
                       ),
-                      "15/9 - 17/10"),
+                      "${currentCourse.startDate} - ${currentCourse.completeDate}"),
                   courseDetailsWidget(
-                      context, Icon(Icons.timelapse), "10:30 AM"),
+                      context, Icon(Icons.timelapse), currentCourse.time),
+                  courseDetailsWidget(context, Icon(Icons.logout),
+                      "+${currentCourse.points} Points"),
                   courseDetailsWidget(
-                      context, Icon(Icons.logout), "+500 Points"),
-                  courseDetailsWidget(
-                      context, Icon(Icons.checklist), "Requires Laptop"),
+                      context,
+                      Icon(Icons.checklist),
+                      currentCourse.requiresLaptop
+                          ? "Laptop Required"
+                          : "Laptop Not Required"),
                 ],
               ),
               SizedBox(
@@ -86,7 +87,7 @@ class _courseDetailsScreenState extends State<courseDetailsScreen> {
                 height: 5.h,
               ),
               Text(
-                "With the current rapid changes in climate change taking a passive stance just isn't an option, so Globe aims to help people change their views on their part in the situation through providing them with real world rewards while also building a healthy community that will help our globe blossom again.",
+                currentCourse.bio,
                 style: TextStyle(fontSize: 12.sp),
               ),
               SizedBox(height: 20.h),

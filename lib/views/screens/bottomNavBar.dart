@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iscapp/controllers/appBarProvider.dart';
+import 'package:iscapp/controllers/coursesProvider.dart';
 import 'package:iscapp/controllers/projectsProvider.dart';
 import 'package:iscapp/models/colorsClass.dart';
 import 'package:iscapp/views/screens/courses/coursesList.dart';
@@ -24,7 +25,9 @@ class _bottomNavState extends State<bottomNav> {
     ChangeNotifierProvider(
         create: (context) => ProjectsProvider(),
         child: studentProjectsScreen()),
-    coursesScreen(),
+    ChangeNotifierProvider(
+        create: (context) => CoursesProvider(),
+        child: coursesScreen(),),
     LabScreen(),
     profileScreen(),
   ];

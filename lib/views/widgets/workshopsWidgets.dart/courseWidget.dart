@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iscapp/models/CourseClass.dart';
 import 'package:iscapp/views/screens/courses/courseDetails.dart';
 
-courseWidget(context, title, lessonCount, startDay, endDay, time) {
+courseWidget(context, Course course) {
   return InkWell(
     onTap: () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => courseDetailsScreen()));
+          MaterialPageRoute(builder: (context) => courseDetailsScreen(currentCourse: course,)));
     },
     child: Container(
       height: 95.h,
@@ -38,13 +39,13 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
+                Text(course.title,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontSize: 20.sp, fontWeight: FontWeight.bold)),
                 Text(
                   overflow: TextOverflow.ellipsis,
-                  "$lessonCount lessons",
+                  "${course.lessonsCount} lessons",
                   style:
                       TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                 ),
@@ -52,7 +53,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                   children: [
                     Text(
                       overflow: TextOverflow.ellipsis,
-                      "$startDay-$endDay",
+                      "${course.startDate}-${course.completeDate}",
                       style: TextStyle(fontSize: 16.sp),
                     ),
                     SizedBox(
@@ -60,7 +61,7 @@ courseWidget(context, title, lessonCount, startDay, endDay, time) {
                     ),
                     Text(
                       overflow: TextOverflow.ellipsis,
-                      "$time",
+                      "${course.time}",
                       style: TextStyle(fontSize: 16.sp),
                     ),
                   ],
