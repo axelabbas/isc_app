@@ -66,7 +66,7 @@ class NewLabFormState extends State<NewLabForm> {
                     types: projectTypes,
                     selectedValueIndex: selectedValueIndex),
                 SizedBox(
-                  height: 25.h,
+                  height: 15.h,
                 ),
                 buttonHintWidget(
                     title: "Project Photos",

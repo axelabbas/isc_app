@@ -81,9 +81,12 @@ class NewCourseFormState extends State<NewCourseForm> {
                   ],
                 ),
                 SizedBox(
-                  height: 30.h,
+                  height: 20.h,
                 ),
-                mainButtonWidget(text: "Submit", buttonClick: () {})
+                mainButtonWidget(text: "Submit", buttonClick: () {}),
+                SizedBox(
+                  height: 20.h,
+                ),
               ],
             ),
           ),

@@ -34,7 +34,7 @@ class _LabScreenState extends State<LabScreen> {
               ),
             ),
             SizedBox(
-              height: 60.h,
+              height: 50.h,
             ),
             mainButtonWidget(
               text: "Pitch us in!",

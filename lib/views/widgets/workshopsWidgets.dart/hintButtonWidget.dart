@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iscapp/models/colorsClass.dart';
 
 class buttonHintWidget extends StatelessWidget {
@@ -16,8 +17,8 @@ class buttonHintWidget extends StatelessWidget {
       children: [
         Text(title),
         SizedBox(
-            height: 50,
-            width: 150,
+            height: 40.h,
+            width: 120.w,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(

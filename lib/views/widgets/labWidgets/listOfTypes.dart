@@ -18,7 +18,7 @@ class typesListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 60.h,
+        height: 40.h,
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width,
         child: ListView.builder(
