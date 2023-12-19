@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iscapp/controllers/appBarProvider.dart';
 import 'package:iscapp/controllers/eventsProvider.dart';
-import 'package:iscapp/views/screens/splashScreen/splashScreen.dart';
+import 'package:iscapp/views/screens/bottomNavBar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,7 +22,8 @@ void main() {
           debugShowCheckedModeBanner: false,
         );
       }),
-      child: SplashScreen(),
+      child: ChangeNotifierProvider(
+          create: (context) => AppBarProvider(), child: bottomNav()),
     ),
   ));
 }

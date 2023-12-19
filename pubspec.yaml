@@ -39,6 +39,7 @@ dependencies:
   infinite_carousel: ^1.0.3
   intl: ^0.18.1
   flutter_screenutil: ^5.9.0
+  flutter_native_splash: ^2.3.7
 
 dev_dependencies:
   flutter_test:
